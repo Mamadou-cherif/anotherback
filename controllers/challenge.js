@@ -1,6 +1,14 @@
 const Challenge= require("../models/challenge")
 const express= require('express')
 const app= express()
+var cloudinary = require('cloudinary').v2;
+
+cloudinary.config({ 
+    cloud_name: 'cashyapp', 
+    api_key: '313655258477521', 
+    api_secret: 'CKMyqbQiGb--yzS0D2bduCxSKLw',
+    secure: true
+  });
 
 function downloadImage(req, res, next){
    //console.log(req.files)
