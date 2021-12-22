@@ -25,17 +25,19 @@ function downloadImage(req, res, next){
         cloudinary.uploader.upload(path_file, function(err, result){
             if(err){
                  console.log("vous faites erreur")
-                res.status(500).json({error: "error"})
+                
+            }
+            else{
+                res.status(200).json({result})
             }
 
-
-         Challenge.findOne({'_id': challengeId})
-            .then(()=>{
-             Challenge.findByIdAndUpdate(challengeId, {text: result.url})
-                 .then(()=>res.status(200).json({message: "succès"}))
-                 .catch(error=> res.status(400).json({error}))
-            })
-            .catch(error=> res.status(400).json({error}))
+        //  Challenge.findOne({'_id': challengeId})
+        //     .then(()=>{
+        //      Challenge.findByIdAndUpdate(challengeId, {text: result.url})
+        //          .then(()=>res.status(200).json({message: "succès"}))
+        //          .catch(error=> res.status(400).json({error}))
+        //     })
+        //     .catch(error=> res.status(400).json({error}))
                 
 
         
