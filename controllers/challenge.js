@@ -22,14 +22,14 @@ function downloadImage(req, res, next){
 
      if (file_ext === 'png' || file_ext === 'jpg' || file_ext === 'jpeg' || file_ext === 'gif') {
 
-        cloudinary.uploader.upload(path_file, function(err, result){
-            if(err){
-                 console.log("vous faites erreur")
+        // cloudinary.uploader.upload(path_file, function(err, result){
+        //     if(err){
+        //          console.log("vous faites erreur")
                 
-            }
-            else{
-                res.status(200).json({result})
-            }
+        //     }
+        //     else{
+        //         res.status(200).json({result})
+        //     }
 
         //  Challenge.findOne({'_id': challengeId})
         //     .then(()=>{
@@ -41,7 +41,7 @@ function downloadImage(req, res, next){
                 
 
         
-         })
+        //  })
      } 
      else {
          return removeFilesOfUploads(res, extension, "Ups, please upload a valid image file.");
